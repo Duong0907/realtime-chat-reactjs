@@ -1,0 +1,25 @@
+.leftMessage {
+    /* background-color: aquamarine; */
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: right;
+}
+
+.messageBox {
+    background-color: #2199f2;
+    border-radius: 10px;    
+    padding: 6px 24px;
+    text-align: right;
+    color: #fff
+}
+
+.leftMessageWrapper {
+    max-width: 400px;
+    width: fit-content;
+}
+
+.messageInfo {
+    font-size: small;
+    text-align: right;
+    font-weight: lighter;
+}

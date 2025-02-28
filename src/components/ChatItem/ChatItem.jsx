@@ -1,6 +1,6 @@
 import styles from './ChatItem.module.css';
 
-function ChatItem() {
+function ChatItem() {   
     return (
         <div className={styles.chatItem}>
             <div className={styles.chatImageContainer}>

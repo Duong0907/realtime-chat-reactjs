@@ -2,6 +2,10 @@ import styles from './Chat.module.css';
 import NavBar from '../../components/NavBar/NavBar.jsx';
 import ChatItem from '../../components/ChatItem/ChatItem.jsx';
 import ChatSearch from '../../components/ChatSearch/ChatSearch.jsx';
+import LeftMessage from '../../components/LeftMessage/LeftMessage.jsx';
+import RightMessage from '../../components/RightMessage/RightMessage.jsx';
+
+import phoneIcon from '../../assets/phone.svg';
 
 function Chat() {
     return (
@@ -11,16 +15,59 @@ function Chat() {
                 <div className={styles.container}>
                     <div className={styles.chatContainer}>
                         <div className={styles.leftPanel}>
-                        <ChatSearch></ChatSearch>
-                            <div className={styles.filterLabel} ></div>
-                            <ChatItem></ChatItem>
-                            <ChatItem></ChatItem>
-                            <ChatItem></ChatItem>
-                            <ChatItem></ChatItem>
-                            <ChatItem></ChatItem>
+                            <ChatSearch></ChatSearch>
+                            <div className={styles.chatList}>
+                                <div className={styles.filterLabel}></div>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                                <ChatItem></ChatItem>
+                            </div>
                         </div>
 
-                        <div className={styles.rightPanel}>Something here</div>
+                        <div className={styles.rightPanel}>
+                            <div className={styles.userStatus}>
+                                <div className={styles.userStatusLeft}>
+                                    <div className={styles.chatProfilePicture}>
+                                        <img
+                                            src="https://upload.wikimedia.org/wikipedia/commons/b/be/Cristiano_Ronaldo%2C_2023.jpg"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className={styles.userInfoWrapper}>
+                                        <div className={styles.username}>
+                                            DuongPhan
+                                        </div>
+                                        <div className={styles.onlineStatus}>
+                                            Online
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={styles.callBtn}>
+                                    <img src={phoneIcon} alt="" />
+                                </div>
+                            </div>
+
+
+                            <div className={styles.messageArea}>
+                                <LeftMessage></LeftMessage>
+                                <LeftMessage></LeftMessage>
+                                <LeftMessage></LeftMessage>
+                                <LeftMessage></LeftMessage>
+                                <RightMessage></RightMessage>
+                                <RightMessage></RightMessage>
+                                <RightMessage></RightMessage>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

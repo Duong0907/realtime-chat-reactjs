@@ -2,6 +2,7 @@
     display: flex;
     padding: 18px;
     border-radius: 5px;
+    border-left: solid 4px #e0e0e0;
 }
 
 .chatImageContainer {

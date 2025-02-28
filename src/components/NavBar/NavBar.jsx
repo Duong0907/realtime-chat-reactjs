@@ -12,7 +12,7 @@ function NavBar() {
                     alt=""
                     className={styles.navIcon}
                 />
-                <span>Chat Appliacation</span>
+                <span>Chat Application</span>
             </div>
             <div className={styles.navRight}>
                 <img src={searchIcon} alt="" className={styles.navIcon} />
