@@ -1,0 +1,36 @@
+
+.searchIcon img {
+    width: 28px;
+}
+
+.searchIcon {
+    padding-left: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #f7f6f9;
+}
+
+.chatSearch {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 6px;
+}
+
+.searchIcon:hover {
+    cursor: pointer;
+}
+
+.chatSearch input  {
+    background-color: #f7f6f9;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+    padding: 12px;
+    min-width: 200px;
+    color: #000;
+    font-size: 14px;
+    font-weight: lighter;
+}

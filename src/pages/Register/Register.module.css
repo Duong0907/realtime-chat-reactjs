@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+.signupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cardContainer {
+    background-color: #fff;
+    padding: 32px 50px;
+    color: #000;
+    border: solid 1px #dbdddf;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+    min-width: 450px;
+
+}
+
+.headerContainer .subTitle {
+    color: #a7a7a9;
+    font-size: 20px;
+    text-align: left;
+}
+
+.headerContainer .title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 32px;
+    color: #37383e;
+}
+
+.signupForm input[type="text"] {
+    background-color: #fff;
+    border: solid 1px #dbdddf;
+    border-radius: 5px;
+    padding: 16px 12px;
+    display: block;
+    width: 100%;
+    margin-bottom: 24px;
+    
+}
+
+.signupForm input[type="text"]::placeholder {
+    font-size: 15px;
+    color: #bcbcbe;
+}
+
+.signupForm .rememberMe, .signupForm .forgotPassword {
+    display: inline-block;
+}
+
+.signupForm input[type="checkbox"] {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.signupForm .rememberMe span {
+    color: #5c5e61;
+    font-size: 14px;
+}
+
+.signupForm .forgotPassword {
+    color: #6f9ee4;
+    text-decoration: underline;
+}
+
+
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.buttonContainer .submitBtn {
+    background-color: #3a7ff9;
+}
+
+.signupSuggContainer span {
+    color: #adafb1;
+    margin-right: 10px;
+}
+
+.signupSuggContainer a {
+    color: #6f9ee4;
+    text-decoration: underline;
+}
+
+.googleSignin {
+    background-color: #fff;
+    color: #000;
+    border: solid 1px #dbdddf;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.googleSignin img {
+    width: 20px;
+}
