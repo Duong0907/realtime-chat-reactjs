@@ -19,7 +19,7 @@ function Register() {
                         id=" "
                         placeholder="Email Address"
                     />
-                    <input type="text" name="" id=" " placeholder="Password" />
+                    <input type="password" name="" id=" " placeholder="Password" />
 
                     <div className={styles.buttonContainer}>
                         <button className={styles.submitBtn}>Sign up</button>

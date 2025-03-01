@@ -5,13 +5,13 @@
 
 .messageBox {
     background-color: #ccc;
-    border-radius: 10px;    
+    border-radius: 32px;    
     padding: 6px 24px;
     text-align: left;
 }
 
 .leftMessageWrapper {
-    max-width: 400px;
+    max-width: 600px;
     width: fit-content;
 }
 
@@ -19,4 +19,36 @@
     font-size: small;
     text-align: right;
     font-weight: lighter;
+    padding-right: 16px;
+}
+
+.chatImageContainer {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin-right: 12px;
+    border-radius: 50%;
+}
+
+
+.chatImageContainer img {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    clip-path: circle();
+    display: flex;
+}
+
+.leftSubWrapper {
+    display: flex;
+    align-items: end;
+    gap: 0;
+}
+
+.username {
+    font-size: small;
+    text-align: left;
+    font-weight: lighter;
+    padding-left: 16px;
 }

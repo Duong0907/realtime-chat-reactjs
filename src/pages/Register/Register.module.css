@@ -33,7 +33,8 @@
     color: #37383e;
 }
 
-.signupForm input[type="text"] {
+.signupForm input[type="text"],
+.signupForm input[type="password"] {
     background-color: #fff;
     border: solid 1px #dbdddf;
     border-radius: 5px;
@@ -41,10 +42,12 @@
     display: block;
     width: 100%;
     margin-bottom: 24px;
-    
+    color: #000;
+    font-weight: lighter;
 }
 
-.signupForm input[type="text"]::placeholder {
+.signupForm input[type="text"]::placeholder,
+.signupForm input[type="password"]::placeholder {
     font-size: 15px;
     color: #bcbcbe;
 }

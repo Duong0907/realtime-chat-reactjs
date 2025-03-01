@@ -6,6 +6,8 @@ import LeftMessage from '../../components/LeftMessage/LeftMessage.jsx';
 import RightMessage from '../../components/RightMessage/RightMessage.jsx';
 
 import phoneIcon from '../../assets/phone.svg';
+import threeDots from '../../assets/three_dots.svg';
+import sendIcon from '../../assets/send.svg';
 
 function Chat() {
     return (
@@ -52,11 +54,15 @@ function Chat() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className={styles.callBtn}>
-                                    <img src={phoneIcon} alt="" />
+                                <div className={styles.rightIcons}>
+                                    <div className={styles.callBtn}>
+                                        <img src={phoneIcon} alt="" />
+                                    </div>
+                                    <div className={styles.callBtn}>
+                                        <img src={threeDots} alt="" />
+                                    </div>
                                 </div>
                             </div>
-
 
                             <div className={styles.messageArea}>
                                 <LeftMessage></LeftMessage>
@@ -66,6 +72,16 @@ function Chat() {
                                 <RightMessage></RightMessage>
                                 <RightMessage></RightMessage>
                                 <RightMessage></RightMessage>
+                                <RightMessage></RightMessage>
+                                <RightMessage></RightMessage>
+                                <RightMessage></RightMessage>
+                            </div>
+
+                            <div className={styles.messageInputContainer}>
+                                <input type="text" name="" id="" placeholder='Start typing...' />
+                                <div className={styles.callBtn}>
+                                    <img src={sendIcon} alt=""  />
+                                </div>
                             </div>
                         </div>
                     </div>

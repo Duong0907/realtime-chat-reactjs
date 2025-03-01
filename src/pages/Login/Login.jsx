@@ -12,18 +12,24 @@ function Login() {
                 </div>
 
                 <div className={styles.loginForm}>
+                    <input type="text" name="" id=" " placeholder="Username" />
                     <input
-                        type="text"
+                        type="password"
                         name=""
                         id=" "
-                        placeholder="Email address"
+                        placeholder="Password"
                     />
-                    <input type="text" name="" id=" " placeholder="Password" />
 
                     <div className={styles.subInput}>
                         <div className={styles.rememberMe}>
-                            <input type="checkbox" name="" id="" />
-                            <span>Remember for 30 days</span>
+                            <input
+                                type="checkbox"
+                                name="remember-me-checkbox"
+                                id="remember-me-checkbox"
+                            />
+                            <label htmlFor="remember-me-checkbox">
+                                Remember for 30 days
+                            </label>
                         </div>
                         <a className={styles.forgotPassword} href="/">
                             Forgot password
