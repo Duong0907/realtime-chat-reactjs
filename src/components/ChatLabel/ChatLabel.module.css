@@ -1,0 +1,17 @@
+.dropDownIcon {
+    width: 28px;
+    cursor: pointer;
+}
+
+.labelContainer {
+    display: flex;
+    align-items: center;
+    padding-left: 28px;
+    cursor: pointer;
+    border-top: solid 1px #ccc;
+    padding-top: 8px;
+}
+
+.labelContainer:hover {
+    color: #2199f2;
+}

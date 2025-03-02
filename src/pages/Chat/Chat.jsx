@@ -4,6 +4,7 @@ import ChatItem from '../../components/ChatItem/ChatItem.jsx';
 import ChatSearch from '../../components/ChatSearch/ChatSearch.jsx';
 import LeftMessage from '../../components/LeftMessage/LeftMessage.jsx';
 import RightMessage from '../../components/RightMessage/RightMessage.jsx';
+import ChatLabel from '../../components/ChatLabel/ChatLabel.jsx';
 
 import phoneIcon from '../../assets/phone.svg';
 import threeDots from '../../assets/three_dots.svg';
@@ -19,12 +20,13 @@ function Chat() {
                         <div className={styles.leftPanel}>
                             <ChatSearch></ChatSearch>
                             <div className={styles.chatList}>
-                                <div className={styles.filterLabel}></div>
+                                <ChatLabel></ChatLabel>
                                 <ChatItem></ChatItem>
                                 <ChatItem></ChatItem>
                                 <ChatItem></ChatItem>
                                 <ChatItem></ChatItem>
                                 <ChatItem></ChatItem>
+                                <ChatLabel></ChatLabel>
                                 <ChatItem></ChatItem>
                                 <ChatItem></ChatItem>
                                 <ChatItem></ChatItem>
@@ -66,14 +68,6 @@ function Chat() {
 
                             <div className={styles.messageArea}>
                                 <LeftMessage></LeftMessage>
-                                <LeftMessage></LeftMessage>
-                                <LeftMessage></LeftMessage>
-                                <LeftMessage></LeftMessage>
-                                <RightMessage></RightMessage>
-                                <RightMessage></RightMessage>
-                                <RightMessage></RightMessage>
-                                <RightMessage></RightMessage>
-                                <RightMessage></RightMessage>
                                 <RightMessage></RightMessage>
                             </div>
 
