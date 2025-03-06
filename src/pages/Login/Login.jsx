@@ -21,6 +21,11 @@ function Login() {
 
             const data = result.data;
             newToast('success', data.message);
+
+            // Store jwt in local storage
+            const jwt = data.data;
+            localStorage.setItem('access-token', jwt);
+
             window.location.href = '/';
         } catch (error) {
             const data = error.response.data;

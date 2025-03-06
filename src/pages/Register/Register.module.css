@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-
 .signupContainer {
     display: flex;
     justify-content: center;
@@ -14,9 +13,8 @@
     color: #000;
     border: solid 1px #dbdddf;
     border-radius: 5px;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     min-width: 450px;
-
 }
 
 .headerContainer .subTitle {
@@ -33,8 +31,8 @@
     color: #37383e;
 }
 
-.signupForm input[type="text"],
-.signupForm input[type="password"] {
+.signupForm input[type='text'],
+.signupForm input[type='password'] {
     background-color: #fff;
     border: solid 1px #dbdddf;
     border-radius: 5px;
@@ -46,17 +44,18 @@
     font-weight: lighter;
 }
 
-.signupForm input[type="text"]::placeholder,
-.signupForm input[type="password"]::placeholder {
+.signupForm input[type='text']::placeholder,
+.signupForm input[type='password']::placeholder {
     font-size: 15px;
     color: #bcbcbe;
 }
 
-.signupForm .rememberMe, .signupForm .forgotPassword {
+.signupForm .rememberMe,
+.signupForm .forgotPassword {
     display: inline-block;
 }
 
-.signupForm input[type="checkbox"] {
+.signupForm input[type='checkbox'] {
     background-color: #ccc;
     cursor: pointer;
 }
@@ -70,8 +69,6 @@
     color: #6f9ee4;
     text-decoration: underline;
 }
-
-
 
 .buttonContainer {
     display: flex;

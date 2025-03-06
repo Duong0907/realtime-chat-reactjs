@@ -1,21 +1,21 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const api = axios.create({
-	baseURL: import.meta.env.VITE_API_URL,
-	timeout: 10000,
-	mode: 'cors',
-	headers: {
-		'Content-Type': 'application/json',
-		'Access-Control-Allow-Credentials': true
-	},
-})
+    baseURL: import.meta.env.VITE_API_URL,
+    timeout: 10000,
+    mode: 'cors',
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': true,
+    },
+});
 
 api.interceptors.request.use((config) => {
-	const token = localStorage.getItem('access-token')
-	if (token) {
-		config.headers.Authorization = `Bearer ${token}`
-	}
-	return config
-})
+    const token = localStorage.getItem('access-token');
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+});
 
-export default api
+export default api;

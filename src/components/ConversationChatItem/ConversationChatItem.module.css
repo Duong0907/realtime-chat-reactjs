@@ -3,6 +3,7 @@
     padding: 18px;
     border-radius: 5px;
     border-left: solid 4px #e0e0e0;
+    max-width: 500px;
 }
 
 .chatImageContainer {
@@ -37,6 +38,9 @@
 .chatItemContainer {
     text-align: left;
     flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .username {
@@ -45,4 +49,6 @@
 
 .chatContent {
     font-weight: lighter;
+    overflow: hidden;
+    white-space: nowrap;
 }

@@ -5,9 +5,9 @@ function ChatSearch() {
     return (
         <div className={styles.chatSearch}>
             <div className={styles.searchIcon}>
-                <img src={searchIcon} alt=""/>
+                <img src={searchIcon} alt="" />
             </div>
-            <input type="text" name="" id="" placeholder='Chat Search' />
+            <input type="text" name="" id="" placeholder="Chat Search" />
         </div>
     );
 }

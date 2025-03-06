@@ -1,11 +1,14 @@
 import styles from './RightMessage.module.css';
 
-function RightMessage() {
+function RightMessage({ content, lastRead }) {
+    let lastReadInfoString = lastRead?.map(user => user.username).join(", ")
+    if (lastReadInfoString)
+        lastReadInfoString = "Seen by " + lastReadInfoString;
     return (
         <div className={styles.rightMessage}>
             <div className={styles.rightMessageWrapper}>
-                <div className={styles.messageBox}>This is a message. This is a  message. This is a message. This is a message</div>    
-                <div className={styles.messageInfo}>seen</div>
+                <div className={styles.messageBox}>{content}</div>
+                <div className={styles.messageInfo}>{lastReadInfoString}</div>
             </div>
         </div>
     );

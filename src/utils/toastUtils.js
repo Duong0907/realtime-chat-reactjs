@@ -5,15 +5,15 @@ const newToast = (type, message, duration) => {
     switch (type) {
         case 'success':
             newToast = toast.success(message, {
-                position: "top-right"
+                position: 'top-right',
             });
             break;
         case 'error':
             newToast = toast.error(message, {
-                position: "top-right"
+                position: 'top-right',
             });
             break;
     }
 };
 
-export { newToast }
+export { newToast };

@@ -3,7 +3,7 @@ import searchIcon from '../../assets/search.svg';
 import notiIcon from '../../assets/noti.svg';
 import dropDown from '../../assets/drop_down.svg';
 
-function NavBar() {
+function NavBar({ user, handleLogout }) {
     return (
         <div className={styles.navBarContainer}>
             <div className={styles.title}>
@@ -17,15 +17,26 @@ function NavBar() {
             <div className={styles.navRight}>
                 <img src={searchIcon} alt="" className={styles.navIcon} />
                 <img src={notiIcon} alt="" className={styles.navIcon} />
-                <div className={styles.accountArea}>
-                    <div className={styles.profilePicture}>
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/b/be/Cristiano_Ronaldo%2C_2023.jpg"
-                            alt=""
-                        />
+                <div className={styles.dropdown}>
+                    <div className={styles.accountArea}>
+                        <div className={styles.profilePicture}>
+                            <img src={user.profilePicture} alt="" />
+                        </div>
+                        <div className={styles.profileName}>
+                            {user.username}
+                        </div>
+                        <img src={dropDown} alt="" className={styles.navIcon} />
                     </div>
-                    <div className="profileName">Duong0907</div>
-                    <img src={dropDown} alt="" className={styles.navIcon} />
+                    <div className={styles.dropDownContent}>
+                        <div className={styles.dropDownOption}>Profile</div>
+                        <div className={styles.dropDownOption}>Settings</div>
+                        <div
+                            className={styles.dropDownOption}
+                            onClick={handleLogout}
+                        >
+                            Log out
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

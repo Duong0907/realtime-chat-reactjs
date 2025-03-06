@@ -7,10 +7,10 @@
 
 .messageBox {
     background-color: #2199f2;
-    border-radius: 32px;    
+    border-radius: 32px;
     padding: 6px 24px;
     text-align: left;
-    color: #fff
+    color: #fff;
 }
 
 .rightMessageWrapper {
