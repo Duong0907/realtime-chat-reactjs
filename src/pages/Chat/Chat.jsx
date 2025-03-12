@@ -29,6 +29,7 @@ function Chat() {
     const [conversationList, setConversationList] = useState(null);
     const [currentChat, setCurrentChat] = useState(null);
     const [lastReadMap, setLastReadMap] = useState({});
+    const [onlineStatus, setOnlineStatus] = useState({});
 
     const divRef = useRef(null);
 
@@ -37,23 +38,46 @@ function Chat() {
         checkAuthenticated();
         getAllNewUsers();
         getConversationList();
+    }, []);
 
-        const socket = new WebSocket('ws://localhost:8080/websocket');
+    useEffect(() => {
+        const jwt = localStorage.getItem('access-token');
+        const socket = new WebSocket(
+            'ws://localhost:8080/websocket?token=' + jwt,
+        );
 
         // Connection opened
         socket.addEventListener('open', (event) => {
-            socket.send('Connection established');
+            console.log('Connection established');
         });
 
         // Listen for messages
         socket.addEventListener('message', (event) => {
-            console.log('Message from server ', event.data);
+            const message = JSON.parse(event.data);
+            console.log(message);
+
+            switch (message.type) {
+                case 'CONNECTION':
+                case 'DISCONNECTION':
+                    if (currentChat && !currentChat.isGroup) {
+                        handleUserConnection(message.data);
+                    }
+                    break;
+
+                case 'MESSAGE':
+            }
         });
-    }, []);
+    }, [currentChat]);
 
     useEffect(() => {
         scrollToBottom();
     }, [currentChat]);
+
+    useEffect(() => {
+        console.log("Online status changes");
+        
+        handleOnlineStatusChange();
+    }, [onlineStatus]);
 
     const checkAuthenticated = async () => {
         const user = await getCurrentUserFromDB();
@@ -93,6 +117,7 @@ function Chat() {
         )[0];
 
         setCurrentChat({
+            conversation: conversation,
             chatTitle: isGroup ? conversation.name : otherUser.username,
             isGroup: isGroup,
             chatMessages: conversation.messages,
@@ -117,8 +142,6 @@ function Chat() {
     const handleLastRead = async (conversation_id) => {
         const lastReadStatus = await getLastReadStatus(conversation_id);
 
-        console.log('before', lastReadStatus);
-
         // Create a map containing user last read status: message_id => user
         const messageUserMap = new Map();
 
@@ -129,20 +152,65 @@ function Chat() {
             if (!messageUserMap.has(messageId)) {
                 messageUserMap.set(messageId, users);
             } else {
-                // Avoid duplicate users by checking their IDs
                 const existingUsers = messageUserMap.get(messageId);
                 existingUsers.push(item.user);
             }
         });
 
         setLastReadMap(Object.fromEntries(messageUserMap));
+    };
 
-        // console.log('after', messageUserMap);
+    // Function to refresh online status after every one minute
+    const handleFetchOnlineStatus = (userId) => {
+        setInterval(() => {}, 6000);
     };
 
     const scrollToBottom = () => {
         divRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
+
+    const handleOnlineStatusChange = () => {
+        if (currentChat && !currentChat.isGroup) {
+            setCurrentChat({
+                ...currentChat,
+                chatOnlineStatus: onlineStatus.isAvailable
+                    ? 'Online'
+                    : calculateTimeFromNow(onlineStatus.lastOnline),
+            });
+        }
+    };
+
+    const handleUserConnection = (newUser) => {
+        if (currentChat && !currentChat.isGroup) {
+            const conversation = currentChat.conversation;
+            const otherUser = conversation.members.filter(
+                (member) => member.id !== currentUser.id,
+            )[0];
+
+            if (otherUser.id == newUser.id) {
+                setOnlineStatus({
+                    isAvailable: newUser.isAvailable,
+                    lastOnline: newUser.lastOnline,
+                });
+            }
+        }
+    };
+
+    // const handleNewUserDisconnection = (newUser) => {
+    //     if (currentChat && !currentChat.isGroup) {
+    //         const conversation = currentChat.conversation;
+    //         const otherUser = conversation.members.filter(
+    //             (member) => member.id !== currentUser.id,
+    //         )[0];
+
+    //         if (otherUser.id == newUser.id) {
+    //             setOnlineStatus({
+    //                 isAvailable: false,
+    //                 lastOnline: newUser.lastOnline
+    //             });
+    //         }
+    //     }
+    // };
 
     return (
         <>
@@ -153,7 +221,6 @@ function Chat() {
                         <div className={styles.leftPanel}>
                             <ChatSearch></ChatSearch>
                             <div className={styles.chatList}>
-                                {/* <ChatLabel title="New messages"></ChatLabel> */}
                                 <ChatLabel title="Your chat"></ChatLabel>
                                 {conversationList === null ? (
                                     <div>Loading...</div>

@@ -30,8 +30,19 @@ const getConversationListFromDB = async () => {
     }
 };
 
+const getOnlineStatus = async () => {
+    try {
+        let result = await axios.get('/users/online-status');
+        const onlineStatus = result.data.data;
+        return onlineStatus;
+    } catch (error) {
+        return null;
+    }
+}
+
 export {
     getCurrentUserFromDB,
     getAllNewUsersFromDB,
     getConversationListFromDB,
+    getOnlineStatus
 };
