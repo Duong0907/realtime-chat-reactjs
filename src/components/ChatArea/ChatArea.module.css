@@ -1,0 +1,44 @@
+.messageArea {
+    padding: 18px;
+    overflow-y: scroll;
+    height: calc(100vh - 240px);
+}
+
+.messageInputContainer {
+    border-top: solid 1px #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 32px;
+    /* flex: auto; */
+}
+
+.messageInputContainer input {
+    background-color: #fff;
+    flex: 1;
+    margin: 16px;
+    border: solid 1px #bbb;
+    height: 32px;
+    border-radius: 16px;
+    color: #000;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.callBtn {
+    display: flex;
+    cursor: pointer;
+    border-radius: 32px;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.callBtn:hover {
+    background-color: #2199f2;
+}
+
+.callBtn img {
+    width: 28px;
+}

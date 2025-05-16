@@ -3,6 +3,7 @@ import styles from './UserChatItem.module.css';
 function UserChatItem({ user, handleChooseChatUser }) {
     const { id, username, email, role, lastOnline, profilePicture, available } =
         user;
+    
 
     return (
         <div

@@ -2,8 +2,21 @@ import styles from './NavBar.module.css';
 import searchIcon from '../../assets/search.svg';
 import notiIcon from '../../assets/noti.svg';
 import dropDown from '../../assets/drop_down.svg';
+import { useContext } from 'react';
+import AuthContext from '../../context/AuthContext';
 
-function NavBar({ user, handleLogout }) {
+function NavBar() {
+    const { user, logout } = useContext(AuthContext);
+
+    // if (!user) {
+    //     return (location.href = '/login');
+    // }
+
+    const handleLogout = () => {
+        logout();
+        location.href = '/login';
+    };
+
     return (
         <div className={styles.navBarContainer}>
             <div className={styles.title}>

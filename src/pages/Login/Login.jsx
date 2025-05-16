@@ -4,6 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 import axios from '../../services/axios/axios.js';
 import { newToast } from '../../utils/toastUtils.js';
+import AuthContext from '../../context/AuthContext.jsx';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -26,7 +27,7 @@ function Login() {
             const jwt = data.data;
             localStorage.setItem('access-token', jwt);
 
-            window.location.href = '/';
+            window.location.href = '/chat';
         } catch (error) {
             const data = error.response.data;
             newToast('error', data.message);
